@@ -1,10 +1,12 @@
-import { AppBar, Toolbar, Typography } from "@material-ui/core";
+import { AppBar, Link, Toolbar, Typography } from "@material-ui/core";
 
 const Navbar = ({ classes }) => {
   return (
     <AppBar position="static" className={classes.navbar}>
       <Toolbar>
-        <Typography>Petar app</Typography>
+        <Link href="/">
+          <Typography>Petar app</Typography>
+        </Link>
       </Toolbar>
     </AppBar>
   );
