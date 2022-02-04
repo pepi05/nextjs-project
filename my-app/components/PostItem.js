@@ -10,7 +10,6 @@ import {
 } from "@material-ui/core";
 
 const PostItem = ({ post }) => {
-  console.log(post);
   return (
     <Card>
       <NextLink href={`/post/${post.id}`} passHref>

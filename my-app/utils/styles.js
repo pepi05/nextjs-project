@@ -7,11 +7,18 @@ const useStyles = makeStyles({
       color: "#ffffff",
       marginLeft: 10,
     },
+    "& nav": {
+      marginLeft: 60,
+    },
   },
   main: {
     minHeight: "80vh",
+    "& form": {
+      marginTop: 40,
+    },
   },
   footer: {
+    marginTop: 10,
     textAlign: "center",
   },
 });

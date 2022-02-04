@@ -4,15 +4,30 @@ import styles from "../styles/Home.module.css";
 import Layout from "../components/Layout";
 import PostsList from "../components/PostsList";
 import { useEffect, useState } from "react";
+import CreatePost from "../components/CreatePost";
 
 const Home = ({ posts }) => {
-  const [fetchedPosts, setFetchedPosts] = useState(null);
+  const [fetchedPosts, setFetchedPosts] = useState([]);
+
   useEffect(() => {
     if (posts) {
       setFetchedPosts(posts);
     }
   }, [posts]);
-  return <Layout>{fetchedPosts && <PostsList posts={fetchedPosts} />}</Layout>;
+  return (
+    <Layout fetchedPosts={fetchedPosts} setFetchedPosts={setFetchedPosts}>
+      {fetchedPosts && (
+        <>
+          {" "}
+          <PostsList posts={fetchedPosts} />
+          <CreatePost
+            fetchedPosts={fetchedPosts}
+            setFetchedPosts={setFetchedPosts}
+          />
+        </>
+      )}
+    </Layout>
+  );
 };
 
 export const getStaticProps = async () => {
